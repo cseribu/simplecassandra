@@ -7,7 +7,6 @@ import cassandra.*;
 import java.math.BigDecimal;
 
 import java.sql.Blob;
-import java.sql.Date;
 import java.sql.Timestamp;
 
 import org.eclipse.emf.ecore.EClass;
@@ -68,6 +67,18 @@ public class CassandraFactoryImpl extends EFactoryImpl implements CassandraFacto
 			case CassandraPackage.ROW: return createRow();
 			case CassandraPackage.COLUMN: return createColumn();
 			case CassandraPackage.SUPER_COLUMN: return createSuperColumn();
+			case CassandraPackage.INTEGER_TYPE: return createIntegerType();
+			case CassandraPackage.UTF8_TYPE: return createUTF8Type();
+			case CassandraPackage.DATA_TYPE: return createDataType();
+			case CassandraPackage.FLOAT_TYPE: return createFloatType();
+			case CassandraPackage.BOOLEAN_TYPE: return createBooleanType();
+			case CassandraPackage.UUID_TYPE: return createUUIDType();
+			case CassandraPackage.ASCII_TYPE: return createAsciiType();
+			case CassandraPackage.DOUBLE_TYPE: return createDoubleType();
+			case CassandraPackage.COUNTER_COLUMN_TYPE: return createCounterColumnType();
+			case CassandraPackage.DECIMAL_TYPE: return createDecimalType();
+			case CassandraPackage.BYTES_TYPE: return createBytesType();
+			case CassandraPackage.DATE_TYPE: return createDateType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -83,28 +94,12 @@ public class CassandraFactoryImpl extends EFactoryImpl implements CassandraFacto
 		switch (eDataType.getClassifierID()) {
 			case CassandraPackage.TIMESTAMP:
 				return createTimestampFromString(eDataType, initialValue);
-			case CassandraPackage.BYTES_TYPE:
-				return createBytesTypeFromString(eDataType, initialValue);
-			case CassandraPackage.DECIMAL_TYPE:
-				return createDecimalTypeFromString(eDataType, initialValue);
-			case CassandraPackage.UTF8_TYPE:
-				return createUTF8TypeFromString(eDataType, initialValue);
-			case CassandraPackage.DOUBLE_TYPE:
-				return createDoubleTypeFromString(eDataType, initialValue);
-			case CassandraPackage.INT32_TYPE:
-				return createInt32TypeFromString(eDataType, initialValue);
-			case CassandraPackage.ASCII_TYPE:
-				return createAsciiTypeFromString(eDataType, initialValue);
-			case CassandraPackage.UUID_TYPE:
-				return createUUIDTypeFromString(eDataType, initialValue);
-			case CassandraPackage.BOOLEAN_TYPE:
-				return createBooleanTypeFromString(eDataType, initialValue);
-			case CassandraPackage.FLOAT_TYPE:
-				return createFloatTypeFromString(eDataType, initialValue);
-			case CassandraPackage.DATE_TYPE:
-				return createDateTypeFromString(eDataType, initialValue);
-			case CassandraPackage.COUNTER_COLUMN_TYPE:
-				return createCounterColumnTypeFromString(eDataType, initialValue);
+			case CassandraPackage.BYTES:
+				return createBytesFromString(eDataType, initialValue);
+			case CassandraPackage.CASSANDRA_DATA_TYPE:
+				return createCassandraDataTypeFromString(eDataType, initialValue);
+			case CassandraPackage.DECIMAL:
+				return createDecimalFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -120,28 +115,12 @@ public class CassandraFactoryImpl extends EFactoryImpl implements CassandraFacto
 		switch (eDataType.getClassifierID()) {
 			case CassandraPackage.TIMESTAMP:
 				return convertTimestampToString(eDataType, instanceValue);
-			case CassandraPackage.BYTES_TYPE:
-				return convertBytesTypeToString(eDataType, instanceValue);
-			case CassandraPackage.DECIMAL_TYPE:
-				return convertDecimalTypeToString(eDataType, instanceValue);
-			case CassandraPackage.UTF8_TYPE:
-				return convertUTF8TypeToString(eDataType, instanceValue);
-			case CassandraPackage.DOUBLE_TYPE:
-				return convertDoubleTypeToString(eDataType, instanceValue);
-			case CassandraPackage.INT32_TYPE:
-				return convertInt32TypeToString(eDataType, instanceValue);
-			case CassandraPackage.ASCII_TYPE:
-				return convertAsciiTypeToString(eDataType, instanceValue);
-			case CassandraPackage.UUID_TYPE:
-				return convertUUIDTypeToString(eDataType, instanceValue);
-			case CassandraPackage.BOOLEAN_TYPE:
-				return convertBooleanTypeToString(eDataType, instanceValue);
-			case CassandraPackage.FLOAT_TYPE:
-				return convertFloatTypeToString(eDataType, instanceValue);
-			case CassandraPackage.DATE_TYPE:
-				return convertDateTypeToString(eDataType, instanceValue);
-			case CassandraPackage.COUNTER_COLUMN_TYPE:
-				return convertCounterColumnTypeToString(eDataType, instanceValue);
+			case CassandraPackage.BYTES:
+				return convertBytesToString(eDataType, instanceValue);
+			case CassandraPackage.CASSANDRA_DATA_TYPE:
+				return convertCassandraDataTypeToString(eDataType, instanceValue);
+			case CassandraPackage.DECIMAL:
+				return convertDecimalToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -202,6 +181,126 @@ public class CassandraFactoryImpl extends EFactoryImpl implements CassandraFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public IntegerType createIntegerType() {
+		IntegerTypeImpl integerType = new IntegerTypeImpl();
+		return integerType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UTF8Type createUTF8Type() {
+		UTF8TypeImpl utf8Type = new UTF8TypeImpl();
+		return utf8Type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType createDataType() {
+		DataTypeImpl dataType = new DataTypeImpl();
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FloatType createFloatType() {
+		FloatTypeImpl floatType = new FloatTypeImpl();
+		return floatType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BooleanType createBooleanType() {
+		BooleanTypeImpl booleanType = new BooleanTypeImpl();
+		return booleanType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UUIDType createUUIDType() {
+		UUIDTypeImpl uuidType = new UUIDTypeImpl();
+		return uuidType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AsciiType createAsciiType() {
+		AsciiTypeImpl asciiType = new AsciiTypeImpl();
+		return asciiType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DoubleType createDoubleType() {
+		DoubleTypeImpl doubleType = new DoubleTypeImpl();
+		return doubleType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CounterColumnType createCounterColumnType() {
+		CounterColumnTypeImpl counterColumnType = new CounterColumnTypeImpl();
+		return counterColumnType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DecimalType createDecimalType() {
+		DecimalTypeImpl decimalType = new DecimalTypeImpl();
+		return decimalType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BytesType createBytesType() {
+		BytesTypeImpl bytesType = new BytesTypeImpl();
+		return bytesType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DateType createDateType() {
+		DateTypeImpl dateType = new DateTypeImpl();
+		return dateType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Timestamp createTimestampFromString(EDataType eDataType, String initialValue) {
 		return (Timestamp)super.createFromString(eDataType, initialValue);
 	}
@@ -220,7 +319,7 @@ public class CassandraFactoryImpl extends EFactoryImpl implements CassandraFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Blob createBytesTypeFromString(EDataType eDataType, String initialValue) {
+	public Blob createBytesFromString(EDataType eDataType, String initialValue) {
 		return (Blob)super.createFromString(eDataType, initialValue);
 	}
 
@@ -229,7 +328,7 @@ public class CassandraFactoryImpl extends EFactoryImpl implements CassandraFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertBytesTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertBytesToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
@@ -238,7 +337,25 @@ public class CassandraFactoryImpl extends EFactoryImpl implements CassandraFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BigDecimal createDecimalTypeFromString(EDataType eDataType, String initialValue) {
+	public DataType createCassandraDataTypeFromString(EDataType eDataType, String initialValue) {
+		return (DataType)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCassandraDataTypeToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BigDecimal createDecimalFromString(EDataType eDataType, String initialValue) {
 		return (BigDecimal)super.createFromString(eDataType, initialValue);
 	}
 
@@ -247,169 +364,7 @@ public class CassandraFactoryImpl extends EFactoryImpl implements CassandraFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertDecimalTypeToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String createUTF8TypeFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertUTF8TypeToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Double createDoubleTypeFromString(EDataType eDataType, String initialValue) {
-		return (Double)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertDoubleTypeToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Integer createInt32TypeFromString(EDataType eDataType, String initialValue) {
-		return (Integer)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertInt32TypeToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String createAsciiTypeFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertAsciiTypeToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String createUUIDTypeFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertUUIDTypeToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Boolean createBooleanTypeFromString(EDataType eDataType, String initialValue) {
-		return (Boolean)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertBooleanTypeToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Float createFloatTypeFromString(EDataType eDataType, String initialValue) {
-		return (Float)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertFloatTypeToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Date createDateTypeFromString(EDataType eDataType, String initialValue) {
-		return (Date)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertDateTypeToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Long createCounterColumnTypeFromString(EDataType eDataType, String initialValue) {
-		return (Long)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertCounterColumnTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertDecimalToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

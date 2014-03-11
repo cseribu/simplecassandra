@@ -88,6 +88,54 @@ public class CassandraAdapterFactory extends AdapterFactoryImpl {
 				return createSuperColumnAdapter();
 			}
 			@Override
+			public Adapter caseIntegerType(IntegerType object) {
+				return createIntegerTypeAdapter();
+			}
+			@Override
+			public Adapter caseUTF8Type(UTF8Type object) {
+				return createUTF8TypeAdapter();
+			}
+			@Override
+			public Adapter caseDataType(DataType object) {
+				return createDataTypeAdapter();
+			}
+			@Override
+			public Adapter caseFloatType(FloatType object) {
+				return createFloatTypeAdapter();
+			}
+			@Override
+			public Adapter caseBooleanType(BooleanType object) {
+				return createBooleanTypeAdapter();
+			}
+			@Override
+			public Adapter caseUUIDType(UUIDType object) {
+				return createUUIDTypeAdapter();
+			}
+			@Override
+			public Adapter caseAsciiType(AsciiType object) {
+				return createAsciiTypeAdapter();
+			}
+			@Override
+			public Adapter caseDoubleType(DoubleType object) {
+				return createDoubleTypeAdapter();
+			}
+			@Override
+			public Adapter caseCounterColumnType(CounterColumnType object) {
+				return createCounterColumnTypeAdapter();
+			}
+			@Override
+			public Adapter caseDecimalType(DecimalType object) {
+				return createDecimalTypeAdapter();
+			}
+			@Override
+			public Adapter caseBytesType(BytesType object) {
+				return createBytesTypeAdapter();
+			}
+			@Override
+			public Adapter caseDateType(DateType object) {
+				return createDateTypeAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -174,6 +222,174 @@ public class CassandraAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSuperColumnAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cassandra.IntegerType <em>Integer Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cassandra.IntegerType
+	 * @generated
+	 */
+	public Adapter createIntegerTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cassandra.UTF8Type <em>UTF8 Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cassandra.UTF8Type
+	 * @generated
+	 */
+	public Adapter createUTF8TypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cassandra.DataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cassandra.DataType
+	 * @generated
+	 */
+	public Adapter createDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cassandra.FloatType <em>Float Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cassandra.FloatType
+	 * @generated
+	 */
+	public Adapter createFloatTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cassandra.BooleanType <em>Boolean Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cassandra.BooleanType
+	 * @generated
+	 */
+	public Adapter createBooleanTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cassandra.UUIDType <em>UUID Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cassandra.UUIDType
+	 * @generated
+	 */
+	public Adapter createUUIDTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cassandra.AsciiType <em>Ascii Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cassandra.AsciiType
+	 * @generated
+	 */
+	public Adapter createAsciiTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cassandra.DoubleType <em>Double Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cassandra.DoubleType
+	 * @generated
+	 */
+	public Adapter createDoubleTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cassandra.CounterColumnType <em>Counter Column Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cassandra.CounterColumnType
+	 * @generated
+	 */
+	public Adapter createCounterColumnTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cassandra.DecimalType <em>Decimal Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cassandra.DecimalType
+	 * @generated
+	 */
+	public Adapter createDecimalTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cassandra.BytesType <em>Bytes Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cassandra.BytesType
+	 * @generated
+	 */
+	public Adapter createBytesTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cassandra.DateType <em>Date Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cassandra.DateType
+	 * @generated
+	 */
+	public Adapter createDateTypeAdapter() {
 		return null;
 	}
 

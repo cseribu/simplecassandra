@@ -2,18 +2,29 @@
  */
 package cassandra.impl;
 
+import cassandra.AsciiType;
+import cassandra.BooleanType;
+import cassandra.BytesType;
 import cassandra.CassandraFactory;
 import cassandra.CassandraPackage;
 import cassandra.Column;
 import cassandra.ColumnFamily;
+import cassandra.CounterColumnType;
+import cassandra.DataType;
+import cassandra.DateType;
+import cassandra.DecimalType;
+import cassandra.DoubleType;
+import cassandra.FloatType;
+import cassandra.IntegerType;
 import cassandra.Keyspace;
 import cassandra.Row;
 import cassandra.SuperColumn;
+import cassandra.UTF8Type;
+import cassandra.UUIDType;
 
 import java.math.BigDecimal;
 
 import java.sql.Blob;
-import java.sql.Date;
 import java.sql.Timestamp;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -71,6 +82,90 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass integerTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass utf8TypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass floatTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass booleanTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass uuidTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass asciiTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass doubleTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass counterColumnTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass decimalTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bytesTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dateTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType timestampEDataType = null;
 
 	/**
@@ -78,77 +173,21 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType bytesTypeEDataType = null;
+	private EDataType bytesEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType decimalTypeEDataType = null;
+	private EDataType cassandraDataTypeEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType utf8TypeEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType doubleTypeEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType int32TypeEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType asciiTypeEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType uuidTypeEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType booleanTypeEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType floatTypeEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType dateTypeEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType counterColumnTypeEDataType = null;
+	private EDataType decimalEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -324,7 +363,7 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getColumn_Value() {
+	public EAttribute getColumn_Timestamp() {
 		return (EAttribute)columnEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -333,7 +372,7 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getColumn_Timestamp() {
+	public EAttribute getColumn_Value() {
 		return (EAttribute)columnEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -369,6 +408,213 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getIntegerType() {
+		return integerTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIntegerType_Value() {
+		return (EAttribute)integerTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUTF8Type() {
+		return utf8TypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUTF8Type_Value() {
+		return (EAttribute)utf8TypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDataType() {
+		return dataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFloatType() {
+		return floatTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFloatType_Value() {
+		return (EAttribute)floatTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBooleanType() {
+		return booleanTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBooleanType_Value() {
+		return (EAttribute)booleanTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUUIDType() {
+		return uuidTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUUIDType_Value() {
+		return (EAttribute)uuidTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAsciiType() {
+		return asciiTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAsciiType_Value() {
+		return (EAttribute)asciiTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDoubleType() {
+		return doubleTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDoubleType_Value() {
+		return (EAttribute)doubleTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCounterColumnType() {
+		return counterColumnTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCounterColumnType_Value() {
+		return (EAttribute)counterColumnTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDecimalType() {
+		return decimalTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDecimalType_Value() {
+		return (EAttribute)decimalTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBytesType() {
+		return bytesTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBytesType_Value() {
+		return (EAttribute)bytesTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDateType() {
+		return dateTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDateType_Value() {
+		return (EAttribute)dateTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getTimestamp() {
 		return timestampEDataType;
 	}
@@ -378,8 +624,8 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getBytesType() {
-		return bytesTypeEDataType;
+	public EDataType getBytes() {
+		return bytesEDataType;
 	}
 
 	/**
@@ -387,8 +633,8 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getDecimalType() {
-		return decimalTypeEDataType;
+	public EDataType getCassandraDataType() {
+		return cassandraDataTypeEDataType;
 	}
 
 	/**
@@ -396,80 +642,8 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getUTF8Type() {
-		return utf8TypeEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getDoubleType() {
-		return doubleTypeEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getInt32Type() {
-		return int32TypeEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getAsciiType() {
-		return asciiTypeEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getUUIDType() {
-		return uuidTypeEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getBooleanType() {
-		return booleanTypeEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getFloatType() {
-		return floatTypeEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getDateType() {
-		return dateTypeEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getCounterColumnType() {
-		return counterColumnTypeEDataType;
+	public EDataType getDecimal() {
+		return decimalEDataType;
 	}
 
 	/**
@@ -515,26 +689,53 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 
 		columnEClass = createEClass(COLUMN);
 		createEAttribute(columnEClass, COLUMN__KEY);
-		createEAttribute(columnEClass, COLUMN__VALUE);
 		createEAttribute(columnEClass, COLUMN__TIMESTAMP);
+		createEAttribute(columnEClass, COLUMN__VALUE);
 
 		superColumnEClass = createEClass(SUPER_COLUMN);
 		createEAttribute(superColumnEClass, SUPER_COLUMN__KEY);
 		createEReference(superColumnEClass, SUPER_COLUMN__COLUMNS);
 
+		integerTypeEClass = createEClass(INTEGER_TYPE);
+		createEAttribute(integerTypeEClass, INTEGER_TYPE__VALUE);
+
+		utf8TypeEClass = createEClass(UTF8_TYPE);
+		createEAttribute(utf8TypeEClass, UTF8_TYPE__VALUE);
+
+		dataTypeEClass = createEClass(DATA_TYPE);
+
+		floatTypeEClass = createEClass(FLOAT_TYPE);
+		createEAttribute(floatTypeEClass, FLOAT_TYPE__VALUE);
+
+		booleanTypeEClass = createEClass(BOOLEAN_TYPE);
+		createEAttribute(booleanTypeEClass, BOOLEAN_TYPE__VALUE);
+
+		uuidTypeEClass = createEClass(UUID_TYPE);
+		createEAttribute(uuidTypeEClass, UUID_TYPE__VALUE);
+
+		asciiTypeEClass = createEClass(ASCII_TYPE);
+		createEAttribute(asciiTypeEClass, ASCII_TYPE__VALUE);
+
+		doubleTypeEClass = createEClass(DOUBLE_TYPE);
+		createEAttribute(doubleTypeEClass, DOUBLE_TYPE__VALUE);
+
+		counterColumnTypeEClass = createEClass(COUNTER_COLUMN_TYPE);
+		createEAttribute(counterColumnTypeEClass, COUNTER_COLUMN_TYPE__VALUE);
+
+		decimalTypeEClass = createEClass(DECIMAL_TYPE);
+		createEAttribute(decimalTypeEClass, DECIMAL_TYPE__VALUE);
+
+		bytesTypeEClass = createEClass(BYTES_TYPE);
+		createEAttribute(bytesTypeEClass, BYTES_TYPE__VALUE);
+
+		dateTypeEClass = createEClass(DATE_TYPE);
+		createEAttribute(dateTypeEClass, DATE_TYPE__VALUE);
+
 		// Create data types
 		timestampEDataType = createEDataType(TIMESTAMP);
-		bytesTypeEDataType = createEDataType(BYTES_TYPE);
-		decimalTypeEDataType = createEDataType(DECIMAL_TYPE);
-		utf8TypeEDataType = createEDataType(UTF8_TYPE);
-		doubleTypeEDataType = createEDataType(DOUBLE_TYPE);
-		int32TypeEDataType = createEDataType(INT32_TYPE);
-		asciiTypeEDataType = createEDataType(ASCII_TYPE);
-		uuidTypeEDataType = createEDataType(UUID_TYPE);
-		booleanTypeEDataType = createEDataType(BOOLEAN_TYPE);
-		floatTypeEDataType = createEDataType(FLOAT_TYPE);
-		dateTypeEDataType = createEDataType(DATE_TYPE);
-		counterColumnTypeEDataType = createEDataType(COUNTER_COLUMN_TYPE);
+		bytesEDataType = createEDataType(BYTES);
+		cassandraDataTypeEDataType = createEDataType(CASSANDRA_DATA_TYPE);
+		decimalEDataType = createEDataType(DECIMAL);
 	}
 
 	/**
@@ -565,6 +766,17 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		integerTypeEClass.getESuperTypes().add(this.getDataType());
+		utf8TypeEClass.getESuperTypes().add(this.getDataType());
+		floatTypeEClass.getESuperTypes().add(this.getDataType());
+		booleanTypeEClass.getESuperTypes().add(this.getDataType());
+		uuidTypeEClass.getESuperTypes().add(this.getDataType());
+		asciiTypeEClass.getESuperTypes().add(this.getDataType());
+		doubleTypeEClass.getESuperTypes().add(this.getDataType());
+		counterColumnTypeEClass.getESuperTypes().add(this.getDataType());
+		decimalTypeEClass.getESuperTypes().add(this.getDataType());
+		bytesTypeEClass.getESuperTypes().add(this.getDataType());
+		dateTypeEClass.getESuperTypes().add(this.getDataType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(keyspaceEClass, Keyspace.class, "Keyspace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -582,26 +794,53 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 
 		initEClass(columnEClass, Column.class, "Column", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getColumn_Key(), ecorePackage.getEString(), "key", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getColumn_Value(), ecorePackage.getEJavaObject(), "value", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getColumn_Timestamp(), this.getTimestamp(), "timestamp", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getColumn_Value(), this.getCassandraDataType(), "value", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(superColumnEClass, SuperColumn.class, "SuperColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSuperColumn_Key(), ecorePackage.getEString(), "key", null, 0, 1, SuperColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSuperColumn_Columns(), this.getColumn(), null, "columns", null, 1, -1, SuperColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(integerTypeEClass, IntegerType.class, "IntegerType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIntegerType_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(utf8TypeEClass, UTF8Type.class, "UTF8Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUTF8Type_Value(), ecorePackage.getEString(), "value", null, 0, 1, UTF8Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(floatTypeEClass, FloatType.class, "FloatType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFloatType_Value(), ecorePackage.getEFloat(), "value", null, 0, 1, FloatType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(booleanTypeEClass, BooleanType.class, "BooleanType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBooleanType_Value(), ecorePackage.getEBoolean(), "value", null, 0, 1, BooleanType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(uuidTypeEClass, UUIDType.class, "UUIDType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUUIDType_Value(), ecorePackage.getEString(), "value", null, 0, 1, UUIDType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(asciiTypeEClass, AsciiType.class, "AsciiType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAsciiType_Value(), ecorePackage.getEString(), "value", null, 0, 1, AsciiType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(doubleTypeEClass, DoubleType.class, "DoubleType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDoubleType_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, DoubleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(counterColumnTypeEClass, CounterColumnType.class, "CounterColumnType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCounterColumnType_Value(), ecorePackage.getELong(), "value", null, 0, 1, CounterColumnType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(decimalTypeEClass, DecimalType.class, "DecimalType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDecimalType_Value(), this.getDecimal(), "value", null, 0, 1, DecimalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(bytesTypeEClass, BytesType.class, "BytesType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBytesType_Value(), this.getBytes(), "value", null, 0, 1, BytesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dateTypeEClass, DateType.class, "DateType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDateType_Value(), this.getTimestamp(), "value", null, 0, 1, DateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize data types
 		initEDataType(timestampEDataType, Timestamp.class, "Timestamp", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(bytesTypeEDataType, Blob.class, "BytesType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(decimalTypeEDataType, BigDecimal.class, "DecimalType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(utf8TypeEDataType, String.class, "UTF8Type", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(doubleTypeEDataType, Double.class, "DoubleType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(int32TypeEDataType, Integer.class, "Int32Type", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(asciiTypeEDataType, String.class, "AsciiType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(uuidTypeEDataType, String.class, "UUIDType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(booleanTypeEDataType, Boolean.class, "BooleanType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(floatTypeEDataType, Float.class, "FloatType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(dateTypeEDataType, Date.class, "DateType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(counterColumnTypeEDataType, Long.class, "CounterColumnType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(bytesEDataType, Blob.class, "Bytes", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(cassandraDataTypeEDataType, DataType.class, "CassandraDataType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(decimalEDataType, BigDecimal.class, "Decimal", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

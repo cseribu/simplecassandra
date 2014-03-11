@@ -67,6 +67,114 @@ public interface CassandraFactory extends EFactory {
 	SuperColumn createSuperColumn();
 
 	/**
+	 * Returns a new object of class '<em>Integer Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Integer Type</em>'.
+	 * @generated
+	 */
+	IntegerType createIntegerType();
+
+	/**
+	 * Returns a new object of class '<em>UTF8 Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>UTF8 Type</em>'.
+	 * @generated
+	 */
+	UTF8Type createUTF8Type();
+
+	/**
+	 * Returns a new object of class '<em>Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Data Type</em>'.
+	 * @generated
+	 */
+	DataType createDataType();
+
+	/**
+	 * Returns a new object of class '<em>Float Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Float Type</em>'.
+	 * @generated
+	 */
+	FloatType createFloatType();
+
+	/**
+	 * Returns a new object of class '<em>Boolean Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boolean Type</em>'.
+	 * @generated
+	 */
+	BooleanType createBooleanType();
+
+	/**
+	 * Returns a new object of class '<em>UUID Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>UUID Type</em>'.
+	 * @generated
+	 */
+	UUIDType createUUIDType();
+
+	/**
+	 * Returns a new object of class '<em>Ascii Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ascii Type</em>'.
+	 * @generated
+	 */
+	AsciiType createAsciiType();
+
+	/**
+	 * Returns a new object of class '<em>Double Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Double Type</em>'.
+	 * @generated
+	 */
+	DoubleType createDoubleType();
+
+	/**
+	 * Returns a new object of class '<em>Counter Column Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Counter Column Type</em>'.
+	 * @generated
+	 */
+	CounterColumnType createCounterColumnType();
+
+	/**
+	 * Returns a new object of class '<em>Decimal Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Decimal Type</em>'.
+	 * @generated
+	 */
+	DecimalType createDecimalType();
+
+	/**
+	 * Returns a new object of class '<em>Bytes Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bytes Type</em>'.
+	 * @generated
+	 */
+	BytesType createBytesType();
+
+	/**
+	 * Returns a new object of class '<em>Date Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Date Type</em>'.
+	 * @generated
+	 */
+	DateType createDateType();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -4,6 +4,7 @@ package cassandra.impl;
 
 import cassandra.CassandraPackage;
 import cassandra.Column;
+import cassandra.DataType;
 
 import java.sql.Timestamp;
 
@@ -22,8 +23,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link cassandra.impl.ColumnImpl#getKey <em>Key</em>}</li>
- *   <li>{@link cassandra.impl.ColumnImpl#getValue <em>Value</em>}</li>
  *   <li>{@link cassandra.impl.ColumnImpl#getTimestamp <em>Timestamp</em>}</li>
+ *   <li>{@link cassandra.impl.ColumnImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,26 +52,6 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 	protected String key = KEY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Object VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected Object value = VALUE_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getTimestamp() <em>Timestamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -89,6 +70,26 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 	 * @ordered
 	 */
 	protected Timestamp timestamp = TIMESTAMP_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final DataType VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataType value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,27 +136,6 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object getValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValue(Object newValue) {
-		Object oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CassandraPackage.COLUMN__VALUE, oldValue, value));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Timestamp getTimestamp() {
 		return timestamp;
 	}
@@ -177,15 +157,36 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DataType getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(DataType newValue) {
+		DataType oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CassandraPackage.COLUMN__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CassandraPackage.COLUMN__KEY:
 				return getKey();
-			case CassandraPackage.COLUMN__VALUE:
-				return getValue();
 			case CassandraPackage.COLUMN__TIMESTAMP:
 				return getTimestamp();
+			case CassandraPackage.COLUMN__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,11 +202,11 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 			case CassandraPackage.COLUMN__KEY:
 				setKey((String)newValue);
 				return;
-			case CassandraPackage.COLUMN__VALUE:
-				setValue(newValue);
-				return;
 			case CassandraPackage.COLUMN__TIMESTAMP:
 				setTimestamp((Timestamp)newValue);
+				return;
+			case CassandraPackage.COLUMN__VALUE:
+				setValue((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -222,11 +223,11 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 			case CassandraPackage.COLUMN__KEY:
 				setKey(KEY_EDEFAULT);
 				return;
-			case CassandraPackage.COLUMN__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
 			case CassandraPackage.COLUMN__TIMESTAMP:
 				setTimestamp(TIMESTAMP_EDEFAULT);
+				return;
+			case CassandraPackage.COLUMN__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -242,10 +243,10 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 		switch (featureID) {
 			case CassandraPackage.COLUMN__KEY:
 				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
-			case CassandraPackage.COLUMN__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case CassandraPackage.COLUMN__TIMESTAMP:
 				return TIMESTAMP_EDEFAULT == null ? timestamp != null : !TIMESTAMP_EDEFAULT.equals(timestamp);
+			case CassandraPackage.COLUMN__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -262,10 +263,10 @@ public class ColumnImpl extends MinimalEObjectImpl.Container implements Column {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (key: ");
 		result.append(key);
-		result.append(", value: ");
-		result.append(value);
 		result.append(", timestamp: ");
 		result.append(timestamp);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

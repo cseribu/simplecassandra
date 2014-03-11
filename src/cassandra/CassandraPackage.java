@@ -227,22 +227,22 @@ public interface CassandraPackage extends EPackage {
 	int COLUMN__KEY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLUMN__VALUE = 1;
-
-	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLUMN__TIMESTAMP = 2;
+	int COLUMN__TIMESTAMP = 1;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLUMN__VALUE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Column</em>' class.
@@ -309,6 +309,441 @@ public interface CassandraPackage extends EPackage {
 	int SUPER_COLUMN_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link cassandra.impl.DataTypeImpl <em>Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cassandra.impl.DataTypeImpl
+	 * @see cassandra.impl.CassandraPackageImpl#getDataType()
+	 * @generated
+	 */
+	int DATA_TYPE = 7;
+
+	/**
+	 * The number of structural features of the '<em>Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link cassandra.impl.IntegerTypeImpl <em>Integer Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cassandra.impl.IntegerTypeImpl
+	 * @see cassandra.impl.CassandraPackageImpl#getIntegerType()
+	 * @generated
+	 */
+	int INTEGER_TYPE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_TYPE__VALUE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Integer Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Integer Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link cassandra.impl.UTF8TypeImpl <em>UTF8 Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cassandra.impl.UTF8TypeImpl
+	 * @see cassandra.impl.CassandraPackageImpl#getUTF8Type()
+	 * @generated
+	 */
+	int UTF8_TYPE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTF8_TYPE__VALUE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>UTF8 Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTF8_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>UTF8 Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTF8_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link cassandra.impl.FloatTypeImpl <em>Float Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cassandra.impl.FloatTypeImpl
+	 * @see cassandra.impl.CassandraPackageImpl#getFloatType()
+	 * @generated
+	 */
+	int FLOAT_TYPE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOAT_TYPE__VALUE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Float Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOAT_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Float Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOAT_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link cassandra.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cassandra.impl.BooleanTypeImpl
+	 * @see cassandra.impl.CassandraPackageImpl#getBooleanType()
+	 * @generated
+	 */
+	int BOOLEAN_TYPE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_TYPE__VALUE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Boolean Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Boolean Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link cassandra.impl.UUIDTypeImpl <em>UUID Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cassandra.impl.UUIDTypeImpl
+	 * @see cassandra.impl.CassandraPackageImpl#getUUIDType()
+	 * @generated
+	 */
+	int UUID_TYPE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UUID_TYPE__VALUE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>UUID Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UUID_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>UUID Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UUID_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link cassandra.impl.AsciiTypeImpl <em>Ascii Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cassandra.impl.AsciiTypeImpl
+	 * @see cassandra.impl.CassandraPackageImpl#getAsciiType()
+	 * @generated
+	 */
+	int ASCII_TYPE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASCII_TYPE__VALUE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ascii Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASCII_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Ascii Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASCII_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link cassandra.impl.DoubleTypeImpl <em>Double Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cassandra.impl.DoubleTypeImpl
+	 * @see cassandra.impl.CassandraPackageImpl#getDoubleType()
+	 * @generated
+	 */
+	int DOUBLE_TYPE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOUBLE_TYPE__VALUE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Double Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOUBLE_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Double Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOUBLE_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link cassandra.impl.CounterColumnTypeImpl <em>Counter Column Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cassandra.impl.CounterColumnTypeImpl
+	 * @see cassandra.impl.CassandraPackageImpl#getCounterColumnType()
+	 * @generated
+	 */
+	int COUNTER_COLUMN_TYPE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COUNTER_COLUMN_TYPE__VALUE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Counter Column Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COUNTER_COLUMN_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Counter Column Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COUNTER_COLUMN_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link cassandra.impl.DecimalTypeImpl <em>Decimal Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cassandra.impl.DecimalTypeImpl
+	 * @see cassandra.impl.CassandraPackageImpl#getDecimalType()
+	 * @generated
+	 */
+	int DECIMAL_TYPE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECIMAL_TYPE__VALUE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Decimal Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECIMAL_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Decimal Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECIMAL_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link cassandra.impl.BytesTypeImpl <em>Bytes Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cassandra.impl.BytesTypeImpl
+	 * @see cassandra.impl.CassandraPackageImpl#getBytesType()
+	 * @generated
+	 */
+	int BYTES_TYPE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BYTES_TYPE__VALUE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Bytes Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BYTES_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Bytes Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BYTES_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link cassandra.impl.DateTypeImpl <em>Date Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cassandra.impl.DateTypeImpl
+	 * @see cassandra.impl.CassandraPackageImpl#getDateType()
+	 * @generated
+	 */
+	int DATE_TYPE = 16;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_TYPE__VALUE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Date Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Date Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>Timestamp</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -316,117 +751,38 @@ public interface CassandraPackage extends EPackage {
 	 * @see cassandra.impl.CassandraPackageImpl#getTimestamp()
 	 * @generated
 	 */
-	int TIMESTAMP = 5;
+	int TIMESTAMP = 17;
 
 	/**
-	 * The meta object id for the '<em>Bytes Type</em>' data type.
+	 * The meta object id for the '<em>Bytes</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see java.sql.Blob
-	 * @see cassandra.impl.CassandraPackageImpl#getBytesType()
+	 * @see cassandra.impl.CassandraPackageImpl#getBytes()
 	 * @generated
 	 */
-	int BYTES_TYPE = 6;
+	int BYTES = 18;
 
 	/**
-	 * The meta object id for the '<em>Decimal Type</em>' data type.
+	 * The meta object id for the '<em>Data Type</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cassandra.DataType
+	 * @see cassandra.impl.CassandraPackageImpl#getCassandraDataType()
+	 * @generated
+	 */
+	int CASSANDRA_DATA_TYPE = 19;
+
+	/**
+	 * The meta object id for the '<em>Decimal</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see java.math.BigDecimal
-	 * @see cassandra.impl.CassandraPackageImpl#getDecimalType()
+	 * @see cassandra.impl.CassandraPackageImpl#getDecimal()
 	 * @generated
 	 */
-	int DECIMAL_TYPE = 7;
+	int DECIMAL = 20;
 
-	/**
-	 * The meta object id for the '<em>UTF8 Type</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.String
-	 * @see cassandra.impl.CassandraPackageImpl#getUTF8Type()
-	 * @generated
-	 */
-	int UTF8_TYPE = 8;
-
-	/**
-	 * The meta object id for the '<em>Double Type</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.Double
-	 * @see cassandra.impl.CassandraPackageImpl#getDoubleType()
-	 * @generated
-	 */
-	int DOUBLE_TYPE = 9;
-
-	/**
-	 * The meta object id for the '<em>Int32 Type</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.Integer
-	 * @see cassandra.impl.CassandraPackageImpl#getInt32Type()
-	 * @generated
-	 */
-	int INT32_TYPE = 10;
-
-	/**
-	 * The meta object id for the '<em>Ascii Type</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.String
-	 * @see cassandra.impl.CassandraPackageImpl#getAsciiType()
-	 * @generated
-	 */
-	int ASCII_TYPE = 11;
-
-	/**
-	 * The meta object id for the '<em>UUID Type</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.String
-	 * @see cassandra.impl.CassandraPackageImpl#getUUIDType()
-	 * @generated
-	 */
-	int UUID_TYPE = 12;
-
-	/**
-	 * The meta object id for the '<em>Boolean Type</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.Boolean
-	 * @see cassandra.impl.CassandraPackageImpl#getBooleanType()
-	 * @generated
-	 */
-	int BOOLEAN_TYPE = 13;
-
-	/**
-	 * The meta object id for the '<em>Float Type</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.Float
-	 * @see cassandra.impl.CassandraPackageImpl#getFloatType()
-	 * @generated
-	 */
-	int FLOAT_TYPE = 14;
-
-	/**
-	 * The meta object id for the '<em>Date Type</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.sql.Date
-	 * @see cassandra.impl.CassandraPackageImpl#getDateType()
-	 * @generated
-	 */
-	int DATE_TYPE = 15;
-
-	/**
-	 * The meta object id for the '<em>Counter Column Type</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.Long
-	 * @see cassandra.impl.CassandraPackageImpl#getCounterColumnType()
-	 * @generated
-	 */
-	int COUNTER_COLUMN_TYPE = 16;
 
 	/**
 	 * Returns the meta object for class '{@link cassandra.Keyspace <em>Keyspace</em>}'.
@@ -557,17 +913,6 @@ public interface CassandraPackage extends EPackage {
 	EAttribute getColumn_Key();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cassandra.Column#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see cassandra.Column#getValue()
-	 * @see #getColumn()
-	 * @generated
-	 */
-	EAttribute getColumn_Value();
-
-	/**
 	 * Returns the meta object for the attribute '{@link cassandra.Column#getTimestamp <em>Timestamp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -577,6 +922,17 @@ public interface CassandraPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getColumn_Timestamp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cassandra.Column#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see cassandra.Column#getValue()
+	 * @see #getColumn()
+	 * @generated
+	 */
+	EAttribute getColumn_Value();
 
 	/**
 	 * Returns the meta object for class '{@link cassandra.SuperColumn <em>Super Column</em>}'.
@@ -611,6 +967,247 @@ public interface CassandraPackage extends EPackage {
 	EReference getSuperColumn_Columns();
 
 	/**
+	 * Returns the meta object for class '{@link cassandra.IntegerType <em>Integer Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Integer Type</em>'.
+	 * @see cassandra.IntegerType
+	 * @generated
+	 */
+	EClass getIntegerType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cassandra.IntegerType#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see cassandra.IntegerType#getValue()
+	 * @see #getIntegerType()
+	 * @generated
+	 */
+	EAttribute getIntegerType_Value();
+
+	/**
+	 * Returns the meta object for class '{@link cassandra.UTF8Type <em>UTF8 Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>UTF8 Type</em>'.
+	 * @see cassandra.UTF8Type
+	 * @generated
+	 */
+	EClass getUTF8Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cassandra.UTF8Type#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see cassandra.UTF8Type#getValue()
+	 * @see #getUTF8Type()
+	 * @generated
+	 */
+	EAttribute getUTF8Type_Value();
+
+	/**
+	 * Returns the meta object for class '{@link cassandra.DataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Data Type</em>'.
+	 * @see cassandra.DataType
+	 * @generated
+	 */
+	EClass getDataType();
+
+	/**
+	 * Returns the meta object for class '{@link cassandra.FloatType <em>Float Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Float Type</em>'.
+	 * @see cassandra.FloatType
+	 * @generated
+	 */
+	EClass getFloatType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cassandra.FloatType#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see cassandra.FloatType#getValue()
+	 * @see #getFloatType()
+	 * @generated
+	 */
+	EAttribute getFloatType_Value();
+
+	/**
+	 * Returns the meta object for class '{@link cassandra.BooleanType <em>Boolean Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Boolean Type</em>'.
+	 * @see cassandra.BooleanType
+	 * @generated
+	 */
+	EClass getBooleanType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cassandra.BooleanType#isValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see cassandra.BooleanType#isValue()
+	 * @see #getBooleanType()
+	 * @generated
+	 */
+	EAttribute getBooleanType_Value();
+
+	/**
+	 * Returns the meta object for class '{@link cassandra.UUIDType <em>UUID Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>UUID Type</em>'.
+	 * @see cassandra.UUIDType
+	 * @generated
+	 */
+	EClass getUUIDType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cassandra.UUIDType#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see cassandra.UUIDType#getValue()
+	 * @see #getUUIDType()
+	 * @generated
+	 */
+	EAttribute getUUIDType_Value();
+
+	/**
+	 * Returns the meta object for class '{@link cassandra.AsciiType <em>Ascii Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ascii Type</em>'.
+	 * @see cassandra.AsciiType
+	 * @generated
+	 */
+	EClass getAsciiType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cassandra.AsciiType#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see cassandra.AsciiType#getValue()
+	 * @see #getAsciiType()
+	 * @generated
+	 */
+	EAttribute getAsciiType_Value();
+
+	/**
+	 * Returns the meta object for class '{@link cassandra.DoubleType <em>Double Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Double Type</em>'.
+	 * @see cassandra.DoubleType
+	 * @generated
+	 */
+	EClass getDoubleType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cassandra.DoubleType#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see cassandra.DoubleType#getValue()
+	 * @see #getDoubleType()
+	 * @generated
+	 */
+	EAttribute getDoubleType_Value();
+
+	/**
+	 * Returns the meta object for class '{@link cassandra.CounterColumnType <em>Counter Column Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Counter Column Type</em>'.
+	 * @see cassandra.CounterColumnType
+	 * @generated
+	 */
+	EClass getCounterColumnType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cassandra.CounterColumnType#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see cassandra.CounterColumnType#getValue()
+	 * @see #getCounterColumnType()
+	 * @generated
+	 */
+	EAttribute getCounterColumnType_Value();
+
+	/**
+	 * Returns the meta object for class '{@link cassandra.DecimalType <em>Decimal Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Decimal Type</em>'.
+	 * @see cassandra.DecimalType
+	 * @generated
+	 */
+	EClass getDecimalType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cassandra.DecimalType#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see cassandra.DecimalType#getValue()
+	 * @see #getDecimalType()
+	 * @generated
+	 */
+	EAttribute getDecimalType_Value();
+
+	/**
+	 * Returns the meta object for class '{@link cassandra.BytesType <em>Bytes Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bytes Type</em>'.
+	 * @see cassandra.BytesType
+	 * @generated
+	 */
+	EClass getBytesType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cassandra.BytesType#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see cassandra.BytesType#getValue()
+	 * @see #getBytesType()
+	 * @generated
+	 */
+	EAttribute getBytesType_Value();
+
+	/**
+	 * Returns the meta object for class '{@link cassandra.DateType <em>Date Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Date Type</em>'.
+	 * @see cassandra.DateType
+	 * @generated
+	 */
+	EClass getDateType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cassandra.DateType#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see cassandra.DateType#getValue()
+	 * @see #getDateType()
+	 * @generated
+	 */
+	EAttribute getDateType_Value();
+
+	/**
 	 * Returns the meta object for data type '{@link java.sql.Timestamp <em>Timestamp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -622,125 +1219,37 @@ public interface CassandraPackage extends EPackage {
 	EDataType getTimestamp();
 
 	/**
-	 * Returns the meta object for data type '{@link java.sql.Blob <em>Bytes Type</em>}'.
+	 * Returns the meta object for data type '{@link java.sql.Blob <em>Bytes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Bytes Type</em>'.
+	 * @return the meta object for data type '<em>Bytes</em>'.
 	 * @see java.sql.Blob
 	 * @model instanceClass="java.sql.Blob"
 	 * @generated
 	 */
-	EDataType getBytesType();
+	EDataType getBytes();
 
 	/**
-	 * Returns the meta object for data type '{@link java.math.BigDecimal <em>Decimal Type</em>}'.
+	 * Returns the meta object for data type '{@link cassandra.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Decimal Type</em>'.
+	 * @return the meta object for data type '<em>Data Type</em>'.
+	 * @see cassandra.DataType
+	 * @model instanceClass="cassandra.DataType"
+	 * @generated
+	 */
+	EDataType getCassandraDataType();
+
+	/**
+	 * Returns the meta object for data type '{@link java.math.BigDecimal <em>Decimal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Decimal</em>'.
 	 * @see java.math.BigDecimal
 	 * @model instanceClass="java.math.BigDecimal"
 	 * @generated
 	 */
-	EDataType getDecimalType();
-
-	/**
-	 * Returns the meta object for data type '{@link java.lang.String <em>UTF8 Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>UTF8 Type</em>'.
-	 * @see java.lang.String
-	 * @model instanceClass="java.lang.String"
-	 * @generated
-	 */
-	EDataType getUTF8Type();
-
-	/**
-	 * Returns the meta object for data type '{@link java.lang.Double <em>Double Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Double Type</em>'.
-	 * @see java.lang.Double
-	 * @model instanceClass="java.lang.Double"
-	 * @generated
-	 */
-	EDataType getDoubleType();
-
-	/**
-	 * Returns the meta object for data type '{@link java.lang.Integer <em>Int32 Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Int32 Type</em>'.
-	 * @see java.lang.Integer
-	 * @model instanceClass="java.lang.Integer"
-	 * @generated
-	 */
-	EDataType getInt32Type();
-
-	/**
-	 * Returns the meta object for data type '{@link java.lang.String <em>Ascii Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Ascii Type</em>'.
-	 * @see java.lang.String
-	 * @model instanceClass="java.lang.String"
-	 * @generated
-	 */
-	EDataType getAsciiType();
-
-	/**
-	 * Returns the meta object for data type '{@link java.lang.String <em>UUID Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>UUID Type</em>'.
-	 * @see java.lang.String
-	 * @model instanceClass="java.lang.String"
-	 * @generated
-	 */
-	EDataType getUUIDType();
-
-	/**
-	 * Returns the meta object for data type '{@link java.lang.Boolean <em>Boolean Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Boolean Type</em>'.
-	 * @see java.lang.Boolean
-	 * @model instanceClass="java.lang.Boolean"
-	 * @generated
-	 */
-	EDataType getBooleanType();
-
-	/**
-	 * Returns the meta object for data type '{@link java.lang.Float <em>Float Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Float Type</em>'.
-	 * @see java.lang.Float
-	 * @model instanceClass="java.lang.Float"
-	 * @generated
-	 */
-	EDataType getFloatType();
-
-	/**
-	 * Returns the meta object for data type '{@link java.sql.Date <em>Date Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Date Type</em>'.
-	 * @see java.sql.Date
-	 * @model instanceClass="java.sql.Date"
-	 * @generated
-	 */
-	EDataType getDateType();
-
-	/**
-	 * Returns the meta object for data type '{@link java.lang.Long <em>Counter Column Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Counter Column Type</em>'.
-	 * @see java.lang.Long
-	 * @model instanceClass="java.lang.Long"
-	 * @generated
-	 */
-	EDataType getCounterColumnType();
+	EDataType getDecimal();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -870,20 +1379,20 @@ public interface CassandraPackage extends EPackage {
 		EAttribute COLUMN__KEY = eINSTANCE.getColumn_Key();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COLUMN__VALUE = eINSTANCE.getColumn_Value();
-
-		/**
 		 * The meta object literal for the '<em><b>Timestamp</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute COLUMN__TIMESTAMP = eINSTANCE.getColumn_Timestamp();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COLUMN__VALUE = eINSTANCE.getColumn_Value();
 
 		/**
 		 * The meta object literal for the '{@link cassandra.impl.SuperColumnImpl <em>Super Column</em>}' class.
@@ -912,6 +1421,214 @@ public interface CassandraPackage extends EPackage {
 		EReference SUPER_COLUMN__COLUMNS = eINSTANCE.getSuperColumn_Columns();
 
 		/**
+		 * The meta object literal for the '{@link cassandra.impl.IntegerTypeImpl <em>Integer Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cassandra.impl.IntegerTypeImpl
+		 * @see cassandra.impl.CassandraPackageImpl#getIntegerType()
+		 * @generated
+		 */
+		EClass INTEGER_TYPE = eINSTANCE.getIntegerType();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTEGER_TYPE__VALUE = eINSTANCE.getIntegerType_Value();
+
+		/**
+		 * The meta object literal for the '{@link cassandra.impl.UTF8TypeImpl <em>UTF8 Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cassandra.impl.UTF8TypeImpl
+		 * @see cassandra.impl.CassandraPackageImpl#getUTF8Type()
+		 * @generated
+		 */
+		EClass UTF8_TYPE = eINSTANCE.getUTF8Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UTF8_TYPE__VALUE = eINSTANCE.getUTF8Type_Value();
+
+		/**
+		 * The meta object literal for the '{@link cassandra.impl.DataTypeImpl <em>Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cassandra.impl.DataTypeImpl
+		 * @see cassandra.impl.CassandraPackageImpl#getDataType()
+		 * @generated
+		 */
+		EClass DATA_TYPE = eINSTANCE.getDataType();
+
+		/**
+		 * The meta object literal for the '{@link cassandra.impl.FloatTypeImpl <em>Float Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cassandra.impl.FloatTypeImpl
+		 * @see cassandra.impl.CassandraPackageImpl#getFloatType()
+		 * @generated
+		 */
+		EClass FLOAT_TYPE = eINSTANCE.getFloatType();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FLOAT_TYPE__VALUE = eINSTANCE.getFloatType_Value();
+
+		/**
+		 * The meta object literal for the '{@link cassandra.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cassandra.impl.BooleanTypeImpl
+		 * @see cassandra.impl.CassandraPackageImpl#getBooleanType()
+		 * @generated
+		 */
+		EClass BOOLEAN_TYPE = eINSTANCE.getBooleanType();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOLEAN_TYPE__VALUE = eINSTANCE.getBooleanType_Value();
+
+		/**
+		 * The meta object literal for the '{@link cassandra.impl.UUIDTypeImpl <em>UUID Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cassandra.impl.UUIDTypeImpl
+		 * @see cassandra.impl.CassandraPackageImpl#getUUIDType()
+		 * @generated
+		 */
+		EClass UUID_TYPE = eINSTANCE.getUUIDType();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UUID_TYPE__VALUE = eINSTANCE.getUUIDType_Value();
+
+		/**
+		 * The meta object literal for the '{@link cassandra.impl.AsciiTypeImpl <em>Ascii Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cassandra.impl.AsciiTypeImpl
+		 * @see cassandra.impl.CassandraPackageImpl#getAsciiType()
+		 * @generated
+		 */
+		EClass ASCII_TYPE = eINSTANCE.getAsciiType();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASCII_TYPE__VALUE = eINSTANCE.getAsciiType_Value();
+
+		/**
+		 * The meta object literal for the '{@link cassandra.impl.DoubleTypeImpl <em>Double Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cassandra.impl.DoubleTypeImpl
+		 * @see cassandra.impl.CassandraPackageImpl#getDoubleType()
+		 * @generated
+		 */
+		EClass DOUBLE_TYPE = eINSTANCE.getDoubleType();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOUBLE_TYPE__VALUE = eINSTANCE.getDoubleType_Value();
+
+		/**
+		 * The meta object literal for the '{@link cassandra.impl.CounterColumnTypeImpl <em>Counter Column Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cassandra.impl.CounterColumnTypeImpl
+		 * @see cassandra.impl.CassandraPackageImpl#getCounterColumnType()
+		 * @generated
+		 */
+		EClass COUNTER_COLUMN_TYPE = eINSTANCE.getCounterColumnType();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COUNTER_COLUMN_TYPE__VALUE = eINSTANCE.getCounterColumnType_Value();
+
+		/**
+		 * The meta object literal for the '{@link cassandra.impl.DecimalTypeImpl <em>Decimal Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cassandra.impl.DecimalTypeImpl
+		 * @see cassandra.impl.CassandraPackageImpl#getDecimalType()
+		 * @generated
+		 */
+		EClass DECIMAL_TYPE = eINSTANCE.getDecimalType();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DECIMAL_TYPE__VALUE = eINSTANCE.getDecimalType_Value();
+
+		/**
+		 * The meta object literal for the '{@link cassandra.impl.BytesTypeImpl <em>Bytes Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cassandra.impl.BytesTypeImpl
+		 * @see cassandra.impl.CassandraPackageImpl#getBytesType()
+		 * @generated
+		 */
+		EClass BYTES_TYPE = eINSTANCE.getBytesType();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BYTES_TYPE__VALUE = eINSTANCE.getBytesType_Value();
+
+		/**
+		 * The meta object literal for the '{@link cassandra.impl.DateTypeImpl <em>Date Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cassandra.impl.DateTypeImpl
+		 * @see cassandra.impl.CassandraPackageImpl#getDateType()
+		 * @generated
+		 */
+		EClass DATE_TYPE = eINSTANCE.getDateType();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATE_TYPE__VALUE = eINSTANCE.getDateType_Value();
+
+		/**
 		 * The meta object literal for the '<em>Timestamp</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -922,114 +1639,34 @@ public interface CassandraPackage extends EPackage {
 		EDataType TIMESTAMP = eINSTANCE.getTimestamp();
 
 		/**
-		 * The meta object literal for the '<em>Bytes Type</em>' data type.
+		 * The meta object literal for the '<em>Bytes</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see java.sql.Blob
-		 * @see cassandra.impl.CassandraPackageImpl#getBytesType()
+		 * @see cassandra.impl.CassandraPackageImpl#getBytes()
 		 * @generated
 		 */
-		EDataType BYTES_TYPE = eINSTANCE.getBytesType();
+		EDataType BYTES = eINSTANCE.getBytes();
 
 		/**
-		 * The meta object literal for the '<em>Decimal Type</em>' data type.
+		 * The meta object literal for the '<em>Data Type</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cassandra.DataType
+		 * @see cassandra.impl.CassandraPackageImpl#getCassandraDataType()
+		 * @generated
+		 */
+		EDataType CASSANDRA_DATA_TYPE = eINSTANCE.getCassandraDataType();
+
+		/**
+		 * The meta object literal for the '<em>Decimal</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see java.math.BigDecimal
-		 * @see cassandra.impl.CassandraPackageImpl#getDecimalType()
+		 * @see cassandra.impl.CassandraPackageImpl#getDecimal()
 		 * @generated
 		 */
-		EDataType DECIMAL_TYPE = eINSTANCE.getDecimalType();
-
-		/**
-		 * The meta object literal for the '<em>UTF8 Type</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.String
-		 * @see cassandra.impl.CassandraPackageImpl#getUTF8Type()
-		 * @generated
-		 */
-		EDataType UTF8_TYPE = eINSTANCE.getUTF8Type();
-
-		/**
-		 * The meta object literal for the '<em>Double Type</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.Double
-		 * @see cassandra.impl.CassandraPackageImpl#getDoubleType()
-		 * @generated
-		 */
-		EDataType DOUBLE_TYPE = eINSTANCE.getDoubleType();
-
-		/**
-		 * The meta object literal for the '<em>Int32 Type</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.Integer
-		 * @see cassandra.impl.CassandraPackageImpl#getInt32Type()
-		 * @generated
-		 */
-		EDataType INT32_TYPE = eINSTANCE.getInt32Type();
-
-		/**
-		 * The meta object literal for the '<em>Ascii Type</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.String
-		 * @see cassandra.impl.CassandraPackageImpl#getAsciiType()
-		 * @generated
-		 */
-		EDataType ASCII_TYPE = eINSTANCE.getAsciiType();
-
-		/**
-		 * The meta object literal for the '<em>UUID Type</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.String
-		 * @see cassandra.impl.CassandraPackageImpl#getUUIDType()
-		 * @generated
-		 */
-		EDataType UUID_TYPE = eINSTANCE.getUUIDType();
-
-		/**
-		 * The meta object literal for the '<em>Boolean Type</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.Boolean
-		 * @see cassandra.impl.CassandraPackageImpl#getBooleanType()
-		 * @generated
-		 */
-		EDataType BOOLEAN_TYPE = eINSTANCE.getBooleanType();
-
-		/**
-		 * The meta object literal for the '<em>Float Type</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.Float
-		 * @see cassandra.impl.CassandraPackageImpl#getFloatType()
-		 * @generated
-		 */
-		EDataType FLOAT_TYPE = eINSTANCE.getFloatType();
-
-		/**
-		 * The meta object literal for the '<em>Date Type</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.sql.Date
-		 * @see cassandra.impl.CassandraPackageImpl#getDateType()
-		 * @generated
-		 */
-		EDataType DATE_TYPE = eINSTANCE.getDateType();
-
-		/**
-		 * The meta object literal for the '<em>Counter Column Type</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.Long
-		 * @see cassandra.impl.CassandraPackageImpl#getCounterColumnType()
-		 * @generated
-		 */
-		EDataType COUNTER_COLUMN_TYPE = eINSTANCE.getCounterColumnType();
+		EDataType DECIMAL = eINSTANCE.getDecimal();
 
 	}
 
