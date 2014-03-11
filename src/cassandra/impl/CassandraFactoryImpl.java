@@ -96,8 +96,6 @@ public class CassandraFactoryImpl extends EFactoryImpl implements CassandraFacto
 				return createTimestampFromString(eDataType, initialValue);
 			case CassandraPackage.BYTES:
 				return createBytesFromString(eDataType, initialValue);
-			case CassandraPackage.CASSANDRA_DATA_TYPE:
-				return createCassandraDataTypeFromString(eDataType, initialValue);
 			case CassandraPackage.DECIMAL:
 				return createDecimalFromString(eDataType, initialValue);
 			default:
@@ -117,8 +115,6 @@ public class CassandraFactoryImpl extends EFactoryImpl implements CassandraFacto
 				return convertTimestampToString(eDataType, instanceValue);
 			case CassandraPackage.BYTES:
 				return convertBytesToString(eDataType, instanceValue);
-			case CassandraPackage.CASSANDRA_DATA_TYPE:
-				return convertCassandraDataTypeToString(eDataType, instanceValue);
 			case CassandraPackage.DECIMAL:
 				return convertDecimalToString(eDataType, instanceValue);
 			default:
@@ -329,24 +325,6 @@ public class CassandraFactoryImpl extends EFactoryImpl implements CassandraFacto
 	 * @generated
 	 */
 	public String convertBytesToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataType createCassandraDataTypeFromString(EDataType eDataType, String initialValue) {
-		return (DataType)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertCassandraDataTypeToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

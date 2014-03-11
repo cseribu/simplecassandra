@@ -83,26 +83,26 @@ public interface Column extends EObject {
 	void setTimestamp(Timestamp value);
 
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * Returns the value of the '<em><b>Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
+	 * @return the value of the '<em>Value</em>' reference.
 	 * @see #setValue(DataType)
 	 * @see cassandra.CassandraPackage#getColumn_Value()
-	 * @model dataType="cassandra.CassandraDataType"
+	 * @model required="true"
 	 * @generated
 	 */
 	DataType getValue();
 
 	/**
-	 * Sets the value of the '{@link cassandra.Column#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link cassandra.Column#getValue <em>Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @param value the new value of the '<em>Value</em>' reference.
 	 * @see #getValue()
 	 * @generated
 	 */

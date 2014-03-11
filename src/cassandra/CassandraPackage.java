@@ -236,7 +236,7 @@ public interface CassandraPackage extends EPackage {
 	int COLUMN__TIMESTAMP = 1;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -764,16 +764,6 @@ public interface CassandraPackage extends EPackage {
 	int BYTES = 18;
 
 	/**
-	 * The meta object id for the '<em>Data Type</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cassandra.DataType
-	 * @see cassandra.impl.CassandraPackageImpl#getCassandraDataType()
-	 * @generated
-	 */
-	int CASSANDRA_DATA_TYPE = 19;
-
-	/**
 	 * The meta object id for the '<em>Decimal</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -781,7 +771,7 @@ public interface CassandraPackage extends EPackage {
 	 * @see cassandra.impl.CassandraPackageImpl#getDecimal()
 	 * @generated
 	 */
-	int DECIMAL = 20;
+	int DECIMAL = 19;
 
 
 	/**
@@ -924,15 +914,15 @@ public interface CassandraPackage extends EPackage {
 	EAttribute getColumn_Timestamp();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cassandra.Column#getValue <em>Value</em>}'.
+	 * Returns the meta object for the reference '{@link cassandra.Column#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @return the meta object for the reference '<em>Value</em>'.
 	 * @see cassandra.Column#getValue()
 	 * @see #getColumn()
 	 * @generated
 	 */
-	EAttribute getColumn_Value();
+	EReference getColumn_Value();
 
 	/**
 	 * Returns the meta object for class '{@link cassandra.SuperColumn <em>Super Column</em>}'.
@@ -1230,17 +1220,6 @@ public interface CassandraPackage extends EPackage {
 	EDataType getBytes();
 
 	/**
-	 * Returns the meta object for data type '{@link cassandra.DataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Data Type</em>'.
-	 * @see cassandra.DataType
-	 * @model instanceClass="cassandra.DataType"
-	 * @generated
-	 */
-	EDataType getCassandraDataType();
-
-	/**
 	 * Returns the meta object for data type '{@link java.math.BigDecimal <em>Decimal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1387,12 +1366,12 @@ public interface CassandraPackage extends EPackage {
 		EAttribute COLUMN__TIMESTAMP = eINSTANCE.getColumn_Timestamp();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COLUMN__VALUE = eINSTANCE.getColumn_Value();
+		EReference COLUMN__VALUE = eINSTANCE.getColumn_Value();
 
 		/**
 		 * The meta object literal for the '{@link cassandra.impl.SuperColumnImpl <em>Super Column</em>}' class.
@@ -1647,16 +1626,6 @@ public interface CassandraPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType BYTES = eINSTANCE.getBytes();
-
-		/**
-		 * The meta object literal for the '<em>Data Type</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cassandra.DataType
-		 * @see cassandra.impl.CassandraPackageImpl#getCassandraDataType()
-		 * @generated
-		 */
-		EDataType CASSANDRA_DATA_TYPE = eINSTANCE.getCassandraDataType();
 
 		/**
 		 * The meta object literal for the '<em>Decimal</em>' data type.

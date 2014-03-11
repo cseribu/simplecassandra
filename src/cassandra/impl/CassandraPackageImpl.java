@@ -180,13 +180,6 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType cassandraDataTypeEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EDataType decimalEDataType = null;
 
 	/**
@@ -372,8 +365,8 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getColumn_Value() {
-		return (EAttribute)columnEClass.getEStructuralFeatures().get(2);
+	public EReference getColumn_Value() {
+		return (EReference)columnEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -633,15 +626,6 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getCassandraDataType() {
-		return cassandraDataTypeEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EDataType getDecimal() {
 		return decimalEDataType;
 	}
@@ -690,7 +674,7 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 		columnEClass = createEClass(COLUMN);
 		createEAttribute(columnEClass, COLUMN__KEY);
 		createEAttribute(columnEClass, COLUMN__TIMESTAMP);
-		createEAttribute(columnEClass, COLUMN__VALUE);
+		createEReference(columnEClass, COLUMN__VALUE);
 
 		superColumnEClass = createEClass(SUPER_COLUMN);
 		createEAttribute(superColumnEClass, SUPER_COLUMN__KEY);
@@ -734,7 +718,6 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 		// Create data types
 		timestampEDataType = createEDataType(TIMESTAMP);
 		bytesEDataType = createEDataType(BYTES);
-		cassandraDataTypeEDataType = createEDataType(CASSANDRA_DATA_TYPE);
 		decimalEDataType = createEDataType(DECIMAL);
 	}
 
@@ -795,7 +778,7 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 		initEClass(columnEClass, Column.class, "Column", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getColumn_Key(), ecorePackage.getEString(), "key", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getColumn_Timestamp(), this.getTimestamp(), "timestamp", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getColumn_Value(), this.getCassandraDataType(), "value", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getColumn_Value(), this.getDataType(), null, "value", null, 1, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(superColumnEClass, SuperColumn.class, "SuperColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSuperColumn_Key(), ecorePackage.getEString(), "key", null, 0, 1, SuperColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -839,7 +822,6 @@ public class CassandraPackageImpl extends EPackageImpl implements CassandraPacka
 		// Initialize data types
 		initEDataType(timestampEDataType, Timestamp.class, "Timestamp", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(bytesEDataType, Blob.class, "Bytes", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(cassandraDataTypeEDataType, DataType.class, "CassandraDataType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(decimalEDataType, BigDecimal.class, "Decimal", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
