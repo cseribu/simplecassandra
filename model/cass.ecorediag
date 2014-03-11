@@ -118,13 +118,6 @@
     <element xmi:type="ecore:EDataType" href="cass.ecore#//Bytes"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2vMUUp_ZEeOIZ4i8X3ibQQ" x="615" y="230"/>
   </children>
-  <children xmi:type="notation:Node" xmi:id="_jLOmIKiEEeOcNa1QNnwOlQ" type="1004">
-    <children xmi:type="notation:Node" xmi:id="_jLP0QKiEEeOcNa1QNnwOlQ" type="4008"/>
-    <children xmi:type="notation:Node" xmi:id="_jLQbUKiEEeOcNa1QNnwOlQ" type="4009"/>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_jLOmIaiEEeOcNa1QNnwOlQ" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EDataType" href="cass.ecore#//CassandraDataType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jLOmIqiEEeOcNa1QNnwOlQ" x="615" y="120"/>
-  </children>
   <children xmi:type="notation:Node" xmi:id="_0iVb4KiEEeOcNa1QNnwOlQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_0iWqAKiEEeOcNa1QNnwOlQ" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_0iWqAaiEEeOcNa1QNnwOlQ" type="5001">
@@ -509,5 +502,18 @@
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VS_uM6iIEeOcNa1QNnwOlQ" points="[-31, -6, 310, 49]$[-291, -61, 50, -6]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VTCxgKiIEeOcNa1QNnwOlQ" id="(0.3137254901960784,0.20408163265306123)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_ZGfqAKkBEeOFGPCTRq8R0Q" type="3002" source="_V59ycJ_TEeOIZ4i8X3ibQQ" target="_TkKVMKiFEeOcNa1QNnwOlQ">
+    <children xmi:type="notation:Node" xmi:id="_ZGitUKkBEeOFGPCTRq8R0Q" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ZGitUakBEeOFGPCTRq8R0Q" x="-53" y="-18"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ZGjUYKkBEeOFGPCTRq8R0Q" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ZGjUYakBEeOFGPCTRq8R0Q" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_ZGfqAakBEeOFGPCTRq8R0Q" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ZGfqAqkBEeOFGPCTRq8R0Q" fontColor="4210752" fontName="Ubuntu" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="cass.ecore#//Column/value"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ZGfqA6kBEeOFGPCTRq8R0Q" points="[42, 32, -168, -142]$[260, 170, 50, -4]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ZGoM4KkBEeOFGPCTRq8R0Q" id="(0.7514792899408284,0.3384615384615385)"/>
   </edges>
 </notation:Diagram>
