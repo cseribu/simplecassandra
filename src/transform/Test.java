@@ -12,7 +12,6 @@ public class Test {
 		CassandraPackageImpl.init();
 		CassandraFactory factory = CassandraFactory.eINSTANCE;
 		
-		
 		Column col = factory.createColumn();
 
 		IntegerType t = factory.createIntegerType();
@@ -38,6 +37,6 @@ public class Test {
 	
 	public static void main(String[] args)
 	{
-		
+		new Test().testCassandra();
 	}
 }

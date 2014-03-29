@@ -1,10 +1,13 @@
 package transform;
 
+import java.util.List;
+
 import uk.ac.bham.cs.m2m.sitra.Rule;
 import uk.ac.bham.cs.m2m.sitra.SimpleTraceableTransformer;
 import uk.ac.bham.cs.tuple.Unit;
 import uk.ac.bham.sitra.Transformer;
 import cassandra.AsciiType;
+import cassandra.UTF8Type;
 import cassandra.BooleanType;
 import cassandra.CassandraFactory;
 import cassandra.Column;
@@ -25,6 +28,7 @@ import couchbase.Metadata;
 import couchbase.impl.CouchbaseFactoryImpl;
 import couchbase.impl.EStringToDocumentImpl;
 import couchbase.impl.EStringToJSONElementImpl;
+import couchbase.impl.JSONObjectImpl;
 
 
 public class ColumnFamily2Bucket extends Rule<ColumnFamily, Unit<Bucket>> {
@@ -41,16 +45,14 @@ public class ColumnFamily2Bucket extends Rule<ColumnFamily, Unit<Bucket>> {
 		Bucket bucket = factory.createBucket();
 		bucket.setName(source.getName());
 		
-		
-		
-		
-		
-		EStringToDocumentImpl ed = (EStringToDocumentImpl) factory.createEStringToDocument();
-		ed.setKey(source.getName());
-		
+
 		for (Row row : source.getRows())
 		{
+			EStringToDocumentImpl ed = (EStringToDocumentImpl) factory.createEStringToDocument();
+			ed.setKey(row.getKey());
+			
 			Document document = factory.createDocument();
+			
 			
 			Metadata meta = factory.createMetadata();
 			meta.setType("json");
@@ -61,17 +63,33 @@ public class ColumnFamily2Bucket extends Rule<ColumnFamily, Unit<Bucket>> {
 			for(SuperColumn scol: row.getSupercolumns())
 			{
 				
+				EStringToJSONElementImpl ee = (EStringToJSONElementImpl) factory.createEStringToJSONElement();
+				
+				ee.setKey(scol.getKey());
+				
+				JSONObjectImpl object = (JSONObjectImpl)factory.createJSONObject();
+				
+								
 				for(Column col : scol.getColumns())
 				{
 					
 					EStringToJSONElementImpl e = (EStringToJSONElementImpl) factory.createEStringToJSONElement();
-					e.setKey(scol.getKey()+"."+ col.getKey());
+					
+					e.setKey(col.getKey());
 					DataType d = col.getValue();
 					//string
 					if(d instanceof AsciiType)
 					{
 						JSONString val = factory.createJSONString();
 						val.setValue(((AsciiType) d).getValue());
+						
+						e.setValue(val);
+						
+					}
+					else if(d instanceof UTF8Type)
+					{
+						JSONString val = factory.createJSONString();
+						val.setValue(((UTF8Type) d).getValue());
 						
 						e.setValue(val);
 						
@@ -97,19 +115,29 @@ public class ColumnFamily2Bucket extends Rule<ColumnFamily, Unit<Bucket>> {
 						
 						e.setValue(val);
 					}
+					else
+					{
+						JSONString val = factory.createJSONString();
+						val.setValue(((AsciiType) d).getValue());
+						
+						e.setValue(val);
+					}
 					
 					
-					document.getMap().add(e);
-					ed.setValue(document);
+					object.getMap().add(e);
 					
 				}
+				ee.setValue(object);
+				document.getMap().add(ee);
+				ed.setValue(document);
+				
 				
 			}
 			
 			for(Column col : row.getColumns())
 			{
 				EStringToJSONElementImpl e = (EStringToJSONElementImpl) factory.createEStringToJSONElement();
-				e.setKey("."+ col.getKey());
+				e.setKey(col.getKey());
 				
 				DataType d = col.getValue();
 				//string
@@ -119,6 +147,14 @@ public class ColumnFamily2Bucket extends Rule<ColumnFamily, Unit<Bucket>> {
 					val.setValue(((AsciiType) d).getValue());
 					
 					e.setValue(val);
+				}
+				else if(d instanceof UTF8Type)
+				{
+					JSONString val = factory.createJSONString();
+					val.setValue(((UTF8Type) d).getValue());
+					
+					e.setValue(val);
+					
 				}
 				else if (d instanceof IntegerType)
 				{
@@ -142,25 +178,27 @@ public class ColumnFamily2Bucket extends Rule<ColumnFamily, Unit<Bucket>> {
 					e.setValue(val);
 				}
 				
+				else
+				{
+					JSONString val = factory.createJSONString();
+					val.setValue(((AsciiType) d).getValue());
+					
+					e.setValue(val);
+				}
 				
 				document.getMap().add(e);
 				ed.setValue(document);
 			}
+			
+			bucket.getDocuments().add(ed);
 		}
 		
-		
-		bucket.getDocuments().add(ed);
-		
-		
-		
+
 		return Unit.with(bucket);
 	}
 
 	@Override
 	public void bind(Unit<Bucket> target, ColumnFamily source, Transformer transformer) {
-		//EStringToDocumentImpl estring = new EStringToDocumentImpl();
-		//estring.setKey(source.getKey());
-		
 		
 	}
 	
@@ -185,15 +223,15 @@ public class ColumnFamily2Bucket extends Rule<ColumnFamily, Unit<Bucket>> {
 		CassandraFactory factory = new CassandraFactoryImpl();
 		
 		ColumnFamily cf = factory.createColumnFamily();
-		cf.setName("ColumnFamily Name");
+		cf.setName("ToyStore");
 		
 		Row aRow = factory.createRow();
-		aRow.setKey("RowKey");
+		aRow.setKey("OhioStore");
 		
 		Column col1 = factory.createColumn();
-		col1.setKey("KeyColumn");
+		col1.setKey("Section");
 		AsciiType value = factory.createAsciiType();
-		value.setValue("This is value");
+		value.setValue("Action Figure");
 		col1.setValue(value);
 		
 		aRow.getColumns().add(col1);
@@ -202,30 +240,25 @@ public class ColumnFamily2Bucket extends Rule<ColumnFamily, Unit<Bucket>> {
 		
 		
 		SuperColumn sc = factory.createSuperColumn();
-		sc.setKey("SuperColumnKey");
+		sc.setKey("Transformer");
 		
 		Column col2 = factory.createColumn();
-		col2.setKey("KeyColumn2");
+		col2.setKey("Section");
 		AsciiType value2 = factory.createAsciiType();
-		value2.setValue("This is value2");
+		value2.setValue("Action Figure");
 		col2.setValue(value2);
 		
 		sc.getColumns().add(col2);
 		
 		Column col3 = factory.createColumn();
-		col3.setKey("KeyColumn3");
+		col3.setKey("Section");
 		AsciiType value3 = factory.createAsciiType();
-		value3.setValue("This is value3");
+		value3.setValue("Action Figure");
 		col3.setValue(value3);
 		
 		sc.getColumns().add(col3);
 		
 		aRow.getSupercolumns().add(sc);
-		
-		
-		
-		
-		
 		
 		
 		Unit<Bucket> ub = transformer.transform(ColumnFamily2Bucket.class, cf);
@@ -242,11 +275,30 @@ public class ColumnFamily2Bucket extends Rule<ColumnFamily, Unit<Bucket>> {
 			for(int j=0; j<doc.getMap().size(); j++)
 			{
 				EStringToJSONElementImpl e = (EStringToJSONElementImpl)doc.getMap().get(j);
-				System.out.println("Key:" + e.getKey());
 				
-				JSONString s = (JSONString)e.getValue();
-				System.out.println("Value:" + s.getValue());
-				System.out.println("--------------------");
+				
+				if(e.getValue() instanceof JSONObjectImpl)
+				{
+					System.out.println("Super Col Key: " + e.getKey());
+					JSONObjectImpl object = (JSONObjectImpl)e.getValue();
+					List columns = object.getMap();
+					for(int n = 0; n< columns.size(); n++)
+					{
+						EStringToJSONElementImpl element = (EStringToJSONElementImpl)columns.get(n);
+						System.out.println("Col Key: " + element.getKey());
+						JSONString s = (JSONString)element.getValue();
+						System.out.println("Col Value: " + s.getValue());
+						System.out.println("--------------------");
+					}
+					
+				}
+				else
+				{
+					System.out.println("Col Key: " + e.getKey());
+					JSONString s = (JSONString)e.getValue();
+					System.out.println("Col Value: " + s.getValue());
+					System.out.println("--------------------");
+				}
 				
 			}
 			System.out.println("--------------------");
